@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+
+<html lang="id">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Undangan Pernikahan</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&amp;family=Great+Vibes&amp;display=swap" rel="stylesheet"/>
+<script crossorigin="anonymous" src="https://kit.fontawesome.com/a076d05399.js"></script>
+<style>
+  
+  .mempelai-photo img {
+  opacity: 0;
+  transform: scale(0.8);
+}
+.mempelai-photo img.show {
+  animation: zoomInCircle 1s ease-out forwards;
+}
+
+  
+  @keyframes zoomInCircle {
+  0% {
+    opacity: 0;
+    transform: scale(0.6);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.mempelai-photo img {
+  animation: zoomInCircle 1s ease-out forwards;
+}
+
+  
+ #savethedate {
+  background: url('IMG-20250529-WA0001.jpg') center center/cover no-repeat;
+  color: #5a2e1a;
+  padding: 80px 20px;
+  position: relative;
+  text-align: center;
+}
+
+#savethedate::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(255,255,255,0.5); /* overlay terang agar teks terlihat */
+  z-index: 0;
+}
+
+#savethedate * {
+  position: relative;
+  z-index: 1;
+}
+
+
+
+#galeri {
+  background: linear-gradient(135deg, #fef9f5, #fdeee2);
+  padding: 60px 20px;
+  text-align: center;
+  position: relative;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 1s ease;
+}
+
+#galeri.show {
+  opacity: 1;
+  transform: none;
+}
+
+#galeri h2,
+#galeri p {
+  color: #5a2e1a; /* cokelat lembut untuk kontras */
+}
+  
+#mempelai {
+  position: relative;
+  background: url('foto-mempelai.jpg') repeat-x center center;
+  background-size: cover;
+  animation: moveBg 40s linear infinite;
+  color: white;
+  overflow: hidden;
+  padding: 80px 20px;
+}
+
+#mempelai::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(255,255,255,0.3);
+  backdrop-filter: blur(1.5px); /* sebelumnya 3px */
+  z-index: 0;
+}
+
+
+#mempelai .content {
+  position: relative;
+  z-index: 1;
+  background-color: rgba(255, 255, 255, 0.6);
+  padding: 40px 20px;
+  border-radius: 16px;
+  max-width: 700px;
+  margin: 0 auto;
+  color: #4b0d1f;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+  animation: fadeSlideUp 1.2s ease-out both;
+  text-align: center;
+}
+
+.mempelai-photo {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.mempelai-photo img {
+  width: 140px;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid #fff;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease;
+}
+
+.mempelai-photo img:hover {
+  transform: scale(1.05);
+}
+
+#mempelai h2 {
+  font-family: 'Tangerine', cursive;
+  font-size: 3rem;
+  color: #800020;
+  margin-bottom: 20px;
+}
+
+#mempelai p {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.8;
+}
+
+#mempelai p strong {
+  font-family: 'Great Vibes', cursive;
+  font-size: 1.8rem;
+  color: #a52a2a;
+  display: block;
+  margin-bottom: 5px;
+}
+
+@keyframes moveBg {
+  0% { background-position: 0% center; }
+  100% { background-position: 100% center; }
+}
+
+@keyframes fadeSlideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+
+    :root {
+      --burgundy: #800020;
+      --gold: #d4af37;
+      --text-dark: #2c2c2c;
+      --text-light: #f8f8f8;
+      --font-head: 'Playfair Display', serif;
+      --font-body: 'Poppins', sans-serif;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: var(--font-body);
+      background-color: #fff;
+      color: var(--text-dark);
+      scroll-behavior: smooth;
+    }
+    h1, h2, h3 {
+      font-family: var(--font-head);
+      color: var(--burgundy);
+    }
+    section {
+      padding: 60px 20px;
+      text-align: center;
+      position: relative;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 1s ease;
+    }
+    section.show {
+      opacity: 1;
+      transform: none;
+    }
+    .burgundy {
+      background: linear-gradient(135deg, #800020, #a52a2a);
+      color: white;
+    }
+    #mempelai {
+  background: url('1000205897.jpg') repeat-x center center;
+  background-size: cover;
+  animation: moveBg 40s linear infinite;
+  color: white;
+  position: relative;
+}
+
+@keyframes moveBg {
+  0% { background-position: 0% center; }
+  100% { background-position: 100% center; }
+}
+
+    #cover {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: url('1000205680.jpg') no-repeat center center/cover;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 80px 20px 40px 20px;
+  color: white;
+}
+    #cover::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: 0;
+    }
+  #cover::after {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.3); /* putih transparan */
+  backdrop-filter: blur(0px); /* blur lembut */
+  mix-blend-mode: screen; /* efek vintage tapi tetap mempertahankan detail background */
+  z-index: 0;
+  pointer-events: none;
+}
+
+
+    #cover * {
+      position: relative;
+      z-index: 1;
+    }
+    #main-content { display: none; }
+    button {
+      background-color: var(--burgundy);
+      color: #fff;
+      padding: 12px 24px;
+      border-radius: 10px;
+      border: none;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+    button:hover {
+      background-color: var(--gold);
+      color: #fff;
+      transform: scale(1.05);
+    }
+    .section-icon {
+      font-size: 2rem;
+      margin-bottom: 15px;
+      color: var(--gold);
+    }
+  .fade-in {
+  animation: fadeIn 1.4s ease forwards;
+  animation-fill-mode: both;
+}
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .highlight {
+      font-style: italic;
+      color: var(--burgundy);
+    }
+  
+#cover h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+}
+#cover h2 {
+  font-family: 'Dancing Script', cursive;
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+  
+@keyframes popup-in {
+  0% {
+    opacity: 0;
+    transform: scale(0.8) translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.popup {
+  animation: popup-in 1.2s ease-out forwards;
+}
+
+
+.cover-text {
+  text-align: center;
+}
+
+
+/* Animasi dari berbagai arah */
+@keyframes fadeInFromTop {
+  from { opacity: 0; transform: translateY(-30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeInFromBottom {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeInFromLeft {
+  from { opacity: 0; transform: translateX(-30px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+@keyframes fadeInFromRight {
+  from { opacity: 0; transform: translateX(30px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+.fade-top.show { animation: fadeInFromTop 1s ease forwards; }
+.fade-bottom.show { animation: fadeInFromBottom 1s ease forwards; }
+.fade-left.show { animation: fadeInFromLeft 1s ease forwards; }
+.fade-right.show { animation: fadeInFromRight 1s ease forwards; }
+
+
+@keyframes tulusFade {
+  0% { opacity: 0; transform: translateY(20px) scale(0.95); }
+  50% { opacity: 0.7; transform: translateY(10px) scale(1.02); }
+  100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+</style>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Scheherazade+New&amp;display=swap" rel="stylesheet"/></head>
+<body>
+<!-- Tambahkan ini di dalam <body> -->
+<audio autoplay="" id="bgm" loop="">
+<source src="musik-latar.mp3" type="audio/mpeg"/>
+  Your browser does not support the audio element.
+</audio>
+<div id="audio-toggle" onclick="toggleAudio()" style="position: fixed; bottom: 20px; right: 20px; background: var(--burgundy); color: white; padding: 10px 15px; border-radius: 50%; cursor: pointer; z-index: 9999; font-size: 18px;">
+  🔊
+</div>
+<script>
+  const audio = document.getElementById("bgm");
+  const toggle = document.getElementById("audio-toggle");
+  let isPlaying = true;
+
+  function toggleAudio() {
+    if (isPlaying) {
+      audio.pause();
+      toggle.textContent = "🔈";
+    } else {
+      audio.play();
+      toggle.textContent = "🔊";
+    }
+    isPlaying = !isPlaying;
+  }
+</script>
+<section id="cover">
+<div class="cover-text">
+<h1 class="popup">
+<span style="font-family:'Great Vibes', cursive; font-size: 2.8rem;">The Wedding Of</span>
+</h1>
+<h2 class="popup" style="animation-delay: 0.5s;">
+<span style="color:#fff8e7; font-family:'Tangerine', cursive; font-size: 3.5rem;">Laysifa &amp; Dendi</span>
+<h3 class="popup" style="animation-delay: 0.5s;">
+<span style="color:#fff8e7; font-family:'Playfair Display', cursive; font-size: 1rem;">06 | Juli | 2025</span>
+</h3>
+</h2></div>
+<button onclick="bukaUndangan()" style="display: block; margin: 10px auto 42%;">Buka Undangan</button>
+</section>
+<main id="main-content">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&amp;family=Great+Vibes&amp;family=Tangerine:wght@700&amp;family=Quicksand:wght@400;600&amp;display=swap" rel="stylesheet"/>
+<style>
+
+#cover h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+}
+#cover h2 {
+  font-family: 'Dancing Script', cursive;
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+  
+/* Animasi dari berbagai arah */
+@keyframes fadeInFromTop {
+  from { opacity: 0; transform: translateY(-30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeInFromBottom {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeInFromLeft {
+  from { opacity: 0; transform: translateX(-30px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+@keyframes fadeInFromRight {
+  from { opacity: 0; transform: translateX(30px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+.fade-top.show { animation: fadeInFromTop 1s ease forwards; }
+.fade-bottom.show { animation: fadeInFromBottom 1s ease forwards; }
+.fade-left.show { animation: fadeInFromLeft 1s ease forwards; }
+.fade-right.show { animation: fadeInFromRight 1s ease forwards; }
+
+</style>
+<section id="mempelai">
+<div class="content">
+<div class="mempelai-photo fade-top">
+<img alt="Foto Mempelai" src="1000205895.jpg"/>
+</div>
+<div class="section-icon fade-top"><i class="fas fa-user-friends"></i></div>
+<h2 class="fade-left">Pasangan Mempelai</h2>
+<p class="fade-right"><strong>Laysifa Nisrina</strong>Putri dari Bapak Ncep dan Ibu Lilim Halimah</p>
+<p class="fade-left"><strong>Dendi Ramdani</strong>Putra dari Bapak Muslim Sopian dan Ibu Dede Aisyah</p>
+</div>
+</section>
+<section id="savethedate">
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Sacramento&family=Playfair+Display:wght@700&display=swap');
+
+    #savethedate {
+      background: url('IMG-20250529-WA0001.jpg') center center/cover no-repeat;
+      color: #5a2e1a;
+      padding: 80px 20px;
+      position: relative;
+      text-align: center;
+    }
+
+    #savethedate::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background-color: rgba(255,255,255,0.5);
+      z-index: 0;
+    }
+
+    #savethedate * {
+      position: relative;
+      z-index: 1;
+    }
+
+    #savethedate h2 {
+      font-family: 'Sacramento', cursive;
+      font-size: 3.2rem;
+      color: #800020;
+      margin-bottom: 10px;
+      animation: textPop 1.8s ease-in-out forwards;
+    }
+
+    #savethedate p {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem;
+      color: #4b0d1f;
+      animation: textFade 2s ease forwards;
+      opacity: 0;
+    }
+
+    #savethedate .section-icon {
+      font-size: 2.5rem;
+      margin-bottom: 15px;
+      animation: glow 2s ease-in-out infinite alternate;
+    }
+
+    @keyframes textPop {
+      0% { opacity: 0; transform: scale(0.7); }
+      60% { transform: scale(1.2); }
+      100% { opacity: 1; transform: scale(1); }
+    }
+
+    @keyframes textFade {
+      0% { opacity: 0; transform: translateY(20px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes glow {
+      0% { transform: scale(1); color: #d4af37; text-shadow: 0 0 5px #d4af37; }
+      100% { transform: scale(1.1); color: #fff; text-shadow: 0 0 15px #ffd700; }
+    }
+  </style>
+<div class="section-icon"><i class="fas fa-calendar-alt"></i></div>
+<h2 style="animation-delay: 0.2s;">Save The Date</h2>
+<p style="animation-delay: 0.5s;"><span class="fade-top" style="display:inline-block; opacity:0; animation: tulusFade 2s ease-out 1.0s forwards;">Minggu, </span><span class="fade-top" style="display:inline-block; opacity:0; animation: tulusFade 2s ease-out 1.5s forwards;">06 </span><span class="fade-top" style="display:inline-block; opacity:0; animation: tulusFade 2s ease-out 2.0s forwards;">Juli </span><span class="fade-top" style="display:inline-block; opacity:0; animation: tulusFade 2s ease-out 2.5s forwards;">2025 </span></p>
+<p style="animation-delay: 0.7s;"><span class="fade-top" style="display:inline-block; opacity:0; animation: tulusFade 2s ease-out 1.0s forwards;">Pukul </span><span class="fade-top" style="display:inline-block; opacity:0; animation: tulusFade 2s ease-out 1.5s forwards;">10.00 </span><span class="fade-top" style="display:inline-block; opacity:0; animation: tulusFade 2s ease-out 2.0s forwards;">WIB </span><span class="fade-top" style="display:inline-block; opacity:0; animation: tulusFade 2s ease-out 2.5s forwards;">- </span><span class="fade-top" style="display:inline-block; opacity:0; animation: tulusFade 2s ease-out 3.0s forwards;">Selesai </span></p>
+<p style="animation-delay: 0.9s;"><span class="fade-top" style="display:inline-block; opacity:0; animation: tulusFade 2s ease-out 1.0s forwards;">Lokasi: </span><span class="fade-top" style="display:inline-block; opacity:0; animation: tulusFade 2s ease-out 1.5s forwards;">Kediaman </span><span class="fade-top" style="display:inline-block; opacity:0; animation: tulusFade 2s ease-out 2.0s forwards;">mempelai </span><span class="fade-top" style="display:inline-block; opacity:0; animation: tulusFade 2s ease-out 2.5s forwards;">wanita, </span><span class="fade-top" style="display:inline-block; opacity:0; animation: tulusFade 2s ease-out 3.0s forwards;">Kp </span><span class="fade-top" style="display:inline-block; opacity:0; animation: tulusFade 2s ease-out 3.5s forwards;">Tegal </span><span class="fade-top" style="display:inline-block; opacity:0; animation: tulusFade 2s ease-out 4.0s forwards;">Batu </span><span class="fade-top" style="display:inline-block; opacity:0; animation: tulusFade 2s ease-out 4.5s forwards;">Rt </span><span class="fade-top" style="display:inline-block; opacity:0; animation: tulusFade 2s ease-out 5.0s forwards;">002 </span><span class="fade-top" style="display:inline-block; opacity:0; animation: tulusFade 2s ease-out 5.5s forwards;">Rw </span><span class="fade-top" style="display:inline-block; opacity:0; animation: tulusFade 2s ease-out 6.0s forwards;">002 </span></p>
+</section>
+<section id="galeri">
+<h2 class="fade-in">Galeri Preweding</h2>
+<p class="fade-in">Beberapa momen indah yang telah kami abadikan dalam perjalanan menuju hari istimewa kami.</p>
+<div class="gallery fade-in">
+<img alt="Prewedding 1" src="1000205897.jpg"/>
+<img alt="Prewedding 2" src="1000205898.jpg"/>
+<img alt="Prewedding 3" src="1000205899.jpg"/>
+<img alt="Prewedding 4" src="1000205900.jpg"/>
+<img alt="Prewedding 5" src="1000205895.jpg"/>
+<img alt="Prewedding 6" src="1000205684.jpg"/>
+</div>
+</section>
+<style>
+
+.gallery {
+  column-count: 3;
+  column-gap: 10px;
+  margin-top: 20px;
+  padding: 0 10px;
+}
+
+.gallery img {
+  width: 100%;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  display: block;
+  break-inside: avoid;
+  opacity: 0;
+  transform: scale(0.95);
+}
+
+.gallery img.play {
+  animation: galeriFade 1.5s ease forwards;
+}
+
+.gallery img:nth-child(1) { animation-delay: 0.2s; }
+.gallery img:nth-child(2) { animation-delay: 0.4s; }
+.gallery img:nth-child(3) { animation-delay: 0.6s; }
+.gallery img:nth-child(4) { animation-delay: 0.8s; }
+.gallery img:nth-child(5) { animation-delay: 1s; }
+.gallery img:nth-child(6) { animation-delay: 1.2s; }
+
+@keyframes galeriFade {
+  0% {
+    opacity: 0;
+    transform: scale(0.9) translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+/* Animasi dari berbagai arah */
+@keyframes fadeInFromTop {
+  from { opacity: 0; transform: translateY(-30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeInFromBottom {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeInFromLeft {
+  from { opacity: 0; transform: translateX(-30px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+@keyframes fadeInFromRight {
+  from { opacity: 0; transform: translateX(30px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+.fade-top.show { animation: fadeInFromTop 1s ease forwards; }
+.fade-bottom.show { animation: fadeInFromBottom 1s ease forwards; }
+.fade-left.show { animation: fadeInFromLeft 1s ease forwards; }
+.fade-right.show { animation: fadeInFromRight 1s ease forwards; }
+
+</style>
+<section id="maps">
+<div class="section-icon"><i class="fas fa-map-marker-alt"></i></div>
+<h2 class="fade-in">Lokasi Pernikahan</h2>
+<p class="fade-in">Klik tombol di bawah untuk membuka lokasi di Google Maps.</p>
+<a href="https://www.google.com/maps?q=-6.849513,107.109886" target="_blank">
+<button class="fade-in" style="margin-top: 20px;">Lihat Lokasi</button>
+</a>
+</section>
+<section class="burgundy" id="rsvp">
+<div class="section-icon"><i class="fas fa-envelope-open-text"></i></div>
+<h2 class="fade-in">Konfirmasi Kehadiran (RSVP)</h2>
+<p class="fade-in">Mohon kesediaannya untuk mengonfirmasi kehadiran Anda pada acara pernikahan kami.</p>
+<form class="fade-in" id="rsvp-form">
+<input name="nama" placeholder="Nama Anda" required="" type="text"/>
+<select name="kehadiran" required="">
+<option value="">-- Kehadiran --</option>
+<option value="Hadir">Hadir</option>
+<option value="Tidak Hadir">Tidak Hadir</option>
+</select>
+<textarea name="pesan" placeholder="Ucapan/Doa"></textarea>
+<button type="submit">Kirim</button>
+</form>
+<div id="rsvp-response"></div>
+</section>
+<section id="thanks">
+<div class="section-icon"><i class="fas fa-hand-holding-heart"></i></div>
+<h2 class="fade-in">Terima Kasih</h2>
+<p class="fade-in">Kami mengucapkan terima kasih yang sebesar-besarnya atas doa restu serta kehadiran Bapak/Ibu/Saudara/i dalam acara pernikahan kami.</p>
+<p class="fade-in">Semoga kehadiran dan doa baik yang diberikan menjadi berkah bagi kami dan menjadi amal kebaikan untuk kita semua.</p>
+</section><section class="burgundy" id="quotes">
+<div class="section-icon"><i class="fas fa-quran"></i></div>
+
+<p class="fade-in" style="font-family: 'Scheherazade New', serif; font-size: 1.6rem; margin: 20px 0;">
+    وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم مِّنْ أَنفُسِكُمْ أَزْوَاجًا لِّتَسْكُنُوا إِلَيْهَا وَجَعَلَ بَيْنَكُم مَّوَدَّةً وَرَحْمَةً ۚ إِنَّ فِي ذَٰلِكَ لَآيَاتٍ لِّقَوْمٍ يَتَفَكَّرُونَ
+  </p>
+<p class="fade-in" style="font-family: 'Playfair Display', serif; font-size: 1.2rem;">
+    "Dan di antara tanda-tanda (kebesaran)-Nya ialah Dia menciptakan pasangan-pasangan untukmu dari jenismu sendiri, agar kamu cenderung dan merasa tenteram kepadanya, dan Dia menjadikan di antaramu rasa kasih dan sayang. Sungguh, pada yang demikian itu benar-benar terdapat tanda-tanda (kebesaran Allah) bagi kaum yang berpikir." (QS. Ar-Rum: 21)
+  </p>
+</section>
+</main>
+<script>
+    function bukaUndangan() {
+      document.getElementById('bgm').play();
+      document.getElementById('cover').style.display = 'none';
+      document.getElementById('main-content').style.display = 'block';
+    }
+
+    document.querySelector('#rsvp-form')?.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const nama = e.target.nama.value;
+      const kehadiran = e.target.kehadiran.value;
+      document.getElementById('rsvp-response').innerHTML = `<p>Terima kasih, ${nama}. Kehadiran Anda (${kehadiran}) telah dicatat.</p>`;
+      e.target.reset();
+    });
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('section').forEach(sec => observer.observe(sec));
+  </script>
+<script>
+  const galleryImages = document.querySelectorAll('.gallery img');
+
+  const imageObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.animation = 'none';
+        entry.target.offsetHeight; // trigger reflow
+        entry.target.style.animation = '';
+        entry.target.classList.add('play');
+        imageObserver.unobserve(entry.target); // remove this line if you want repeatable on scroll
+      }
+    });
+  }, { threshold: 0.1 });
+
+  galleryImages.forEach(img => {
+    imageObserver.observe(img);
+  });
+</script>
+<script>
+  const fadeElements = document.querySelectorAll('.fade-top, .fade-bottom, .fade-left, .fade-right');
+  const fadeObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('show');
+        fadeObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.3 });
+
+  fadeElements.forEach(el => fadeObserver.observe(el));
+</script>
+<script>
+  const mempelaiPhoto = document.querySelector('.mempelai-photo img');
+
+  const photoObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        mempelaiPhoto.classList.add('show');
+        photoObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.5 });
+
+  if (mempelaiPhoto) {
+    photoObserver.observe(mempelaiPhoto);
+  }
+</script>
+</body>
+</html>
